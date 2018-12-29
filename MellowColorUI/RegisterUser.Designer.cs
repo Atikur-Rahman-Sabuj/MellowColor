@@ -71,7 +71,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(462, 409);
+            this.label12.Location = new System.Drawing.Point(444, 409);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 21);
             this.label12.TabIndex = 43;
@@ -81,7 +81,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(462, 373);
+            this.label11.Location = new System.Drawing.Point(444, 373);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 21);
             this.label11.TabIndex = 44;
@@ -91,7 +91,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(462, 337);
+            this.label10.Location = new System.Drawing.Point(444, 337);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 21);
             this.label10.TabIndex = 45;
@@ -101,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(462, 299);
+            this.label4.Location = new System.Drawing.Point(444, 299);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 21);
             this.label4.TabIndex = 46;
@@ -112,7 +112,7 @@
             this.tbxRegisterConfPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxRegisterConfPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxRegisterConfPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxRegisterConfPassword.Location = new System.Drawing.Point(613, 406);
+            this.tbxRegisterConfPassword.Location = new System.Drawing.Point(595, 406);
             this.tbxRegisterConfPassword.Name = "tbxRegisterConfPassword";
             this.tbxRegisterConfPassword.PasswordChar = '*';
             this.tbxRegisterConfPassword.Size = new System.Drawing.Size(341, 29);
@@ -123,7 +123,7 @@
             this.tbxRegisterPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxRegisterPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxRegisterPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxRegisterPassword.Location = new System.Drawing.Point(613, 370);
+            this.tbxRegisterPassword.Location = new System.Drawing.Point(595, 370);
             this.tbxRegisterPassword.Name = "tbxRegisterPassword";
             this.tbxRegisterPassword.PasswordChar = '*';
             this.tbxRegisterPassword.Size = new System.Drawing.Size(341, 29);
@@ -134,7 +134,7 @@
             this.tbxRegisterUserName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxRegisterUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxRegisterUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxRegisterUserName.Location = new System.Drawing.Point(613, 334);
+            this.tbxRegisterUserName.Location = new System.Drawing.Point(595, 334);
             this.tbxRegisterUserName.Name = "tbxRegisterUserName";
             this.tbxRegisterUserName.Size = new System.Drawing.Size(341, 29);
             this.tbxRegisterUserName.TabIndex = 38;
@@ -144,7 +144,7 @@
             this.tbxRegisterName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxRegisterName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxRegisterName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxRegisterName.Location = new System.Drawing.Point(613, 296);
+            this.tbxRegisterName.Location = new System.Drawing.Point(595, 296);
             this.tbxRegisterName.Name = "tbxRegisterName";
             this.tbxRegisterName.Size = new System.Drawing.Size(341, 29);
             this.tbxRegisterName.TabIndex = 37;
@@ -160,7 +160,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(810, 456);
+            this.btnRegister.Location = new System.Drawing.Point(792, 456);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(145, 31);
             this.btnRegister.TabIndex = 41;
@@ -179,7 +179,7 @@
             this.btnResetRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnResetRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetRegister.ForeColor = System.Drawing.Color.White;
-            this.btnResetRegister.Location = new System.Drawing.Point(659, 456);
+            this.btnResetRegister.Location = new System.Drawing.Point(641, 456);
             this.btnResetRegister.Name = "btnResetRegister";
             this.btnResetRegister.Size = new System.Drawing.Size(145, 31);
             this.btnResetRegister.TabIndex = 42;
@@ -190,7 +190,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(454, 273);
+            this.panel2.Location = new System.Drawing.Point(436, 273);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(519, 259);
             this.panel2.TabIndex = 48;
@@ -201,7 +201,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(450, 221);
+            this.label5.Location = new System.Drawing.Point(432, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 30);
             this.label5.TabIndex = 50;
@@ -219,16 +219,16 @@
             // 
             // lblTime
             // 
-            this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Image = global::MellowColorUI.Properties.Resources.NavyBlueBack;
-            this.lblTime.Location = new System.Drawing.Point(1150, 78);
+            this.lblTime.Location = new System.Drawing.Point(1086, 70);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(122, 21);
+            this.lblTime.Size = new System.Drawing.Size(183, 22);
             this.lblTime.TabIndex = 55;
             this.lblTime.Text = "dd mm yy tt tt tt";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel4
             // 
@@ -361,7 +361,7 @@
             this.lblMessage.BackColor = System.Drawing.Color.Teal;
             this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.Color.White;
-            this.lblMessage.Location = new System.Drawing.Point(-1, 746);
+            this.lblMessage.Location = new System.Drawing.Point(-1, 747);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(1368, 21);
             this.lblMessage.TabIndex = 128;

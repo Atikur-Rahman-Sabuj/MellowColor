@@ -11,12 +11,21 @@ namespace DataAccessLibrary.DA
     {
         public List<Product> GetAllExceptDeleted()
         {
-            List<Product> products = GetAll().Where(a => a.IsDeleted == false).OrderBy(a => a.Name).ToList();
-            products.ForEach(a =>
+            List<Product> products = new List<Product>();
+            try
             {
-                a.CategoryName = a.Category.Name;
-                a.BrandName = a.Brand.Name;
-            });
+                products = GetAll().Where(a => a.IsDeleted == false).OrderBy(a => a.Name).ToList();
+                products.ForEach(a =>
+                {
+                    a.CategoryName = a.Category.Name;
+                    a.BrandName = a.Brand.Name;
+                });
+            }
+            catch (Exception e)
+            {
+
+            }
+            
             return products;
         }
         

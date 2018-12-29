@@ -301,11 +301,10 @@
             this.lblMessage.BackColor = System.Drawing.Color.Teal;
             this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.Color.White;
-            this.lblMessage.Location = new System.Drawing.Point(0, 749);
+            this.lblMessage.Location = new System.Drawing.Point(0, 747);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(1366, 21);
             this.lblMessage.TabIndex = 130;
-            this.lblMessage.Text = "Search";
             // 
             // btnReports
             // 

@@ -11,6 +11,7 @@ using PrinterUtility;
 using MellowColorUI.Utility;
 using System.Globalization;
 using ModelLibrary.Entity;
+using System.Text.RegularExpressions;
 
 namespace MellowColorUI
 {
@@ -62,6 +63,7 @@ namespace MellowColorUI
             BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n","Size",Size));
             BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n", "Color", Color));
             BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n", "Price", Price.ToString("N", new CultureInfo("en-US"))));
+            BytesValue = PrintExtensions.AddBytes(BytesValue, Barcode + "\n");
             BytesValue = PrintExtensions.AddBytes(BytesValue, obj.BarCode.Code128(Barcode));
             BytesValue = PrintExtensions.AddBytes(BytesValue, "\n\n\n\n\n");
             return BytesValue;
@@ -69,11 +71,27 @@ namespace MellowColorUI
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
+            if (BarcodeNotGood())
+            {
+                lblMessage.Text = "Barcode can't contain anything except number.";
+                return;
+            }
             Printer printer = new Printer();
             var BytesValue = SetPrintValue();
             printer.PrintToPrinter(BytesValue);
             ResetControls();
         }
+
+        private bool BarcodeNotGood()
+        {
+            if (Regex.IsMatch(tbxBarcode.Text, @"^\d+$"))
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void SetBarCode()
         {
             if (tbxBarcode.Text=="")
@@ -93,6 +111,12 @@ namespace MellowColorUI
 
         private void btnPrintCut_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
+            if (BarcodeNotGood())
+            {
+                lblMessage.Text = "Barcode can't contain anything except number.";
+                return;
+            }
             Printer printer = new Printer();
             var BytesValue = SetPrintValue();
             BytesValue = PrintExtensions.AddBytes(BytesValue, printer.CutFull());

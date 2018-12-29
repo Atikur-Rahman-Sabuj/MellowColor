@@ -69,7 +69,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(391, 222);
+            this.label3.Location = new System.Drawing.Point(407, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 30);
             this.label3.TabIndex = 78;
@@ -81,7 +81,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(403, 305);
+            this.label2.Location = new System.Drawing.Point(419, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 21);
             this.label2.TabIndex = 61;
@@ -93,7 +93,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(403, 389);
+            this.label1.Location = new System.Drawing.Point(419, 389);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 62;
@@ -109,7 +109,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(710, 457);
+            this.btnLogin.Location = new System.Drawing.Point(726, 457);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(145, 31);
             this.btnLogin.TabIndex = 59;
@@ -122,7 +122,7 @@
             this.tbxLoginPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxLoginPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxLoginPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLoginPassword.Location = new System.Drawing.Point(559, 386);
+            this.tbxLoginPassword.Location = new System.Drawing.Point(575, 386);
             this.tbxLoginPassword.Name = "tbxLoginPassword";
             this.tbxLoginPassword.PasswordChar = '*';
             this.tbxLoginPassword.Size = new System.Drawing.Size(296, 29);
@@ -130,8 +130,10 @@
             // 
             // tbxLoginUserName
             // 
+            this.tbxLoginUserName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbxLoginUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.tbxLoginUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLoginUserName.Location = new System.Drawing.Point(559, 305);
+            this.tbxLoginUserName.Location = new System.Drawing.Point(575, 305);
             this.tbxLoginUserName.Name = "tbxLoginUserName";
             this.tbxLoginUserName.Size = new System.Drawing.Size(296, 29);
             this.tbxLoginUserName.TabIndex = 57;
@@ -146,7 +148,7 @@
             this.btnResetLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnResetLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetLogin.ForeColor = System.Drawing.Color.White;
-            this.btnResetLogin.Location = new System.Drawing.Point(559, 457);
+            this.btnResetLogin.Location = new System.Drawing.Point(575, 457);
             this.btnResetLogin.Name = "btnResetLogin";
             this.btnResetLogin.Size = new System.Drawing.Size(145, 31);
             this.btnResetLogin.TabIndex = 60;
@@ -157,7 +159,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(390, 274);
+            this.panel1.Location = new System.Drawing.Point(406, 274);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 259);
             this.panel1.TabIndex = 76;
@@ -272,7 +274,7 @@
             this.lblMessage.BackColor = System.Drawing.Color.Teal;
             this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.Color.White;
-            this.lblMessage.Location = new System.Drawing.Point(-1, 746);
+            this.lblMessage.Location = new System.Drawing.Point(-1, 747);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(1368, 21);
             this.lblMessage.TabIndex = 127;

@@ -205,7 +205,8 @@ namespace MellowColorUI
                 };
                 if (GlobalProduct.BrandId<0||GlobalProduct.CategoryId<0)
                 {
-                    lblError.Text = "Please select Brand and Category!";
+                    lblMessage.Text = "Please select Brand and Category!";
+                    return;
                 }
             }
             else
@@ -229,19 +230,20 @@ namespace MellowColorUI
                 lblError.Text = "";
                 if (productDataAccess.Save(GlobalProduct, user.Id))
                 {
-                    if(CreateMood)
+                    
+                    ResetFormControls();
+                    //GlobalProducts = productDataAccess.GetAllExceptDeleted();
+                    //Utilities.BindListToGridView<ModelLibrary.Entity.Product>(GlobalProducts, dataGridViewProduct, lblMessage);
+                    if (CreateMood)
                     {
-                        lblMessage.Text = "Created Successfully!";
-                    }                     
+                        lblMessage.Text = "Created Successfully! Reload to view on list.";
+                    }
                     else
                     {
                         lblMessage.Text = "Updated Successfully!";
                     }
-                    ResetFormControls();
-                    GlobalProducts = productDataAccess.GetAllExceptDeleted();
-                    Utilities.BindListToGridView<ModelLibrary.Entity.Product>(GlobalProducts, dataGridViewProduct, lblMessage);
-                    
-                    
+
+
                 }
                 else
                 {
@@ -332,6 +334,7 @@ namespace MellowColorUI
                 tbxName.Text = GlobalProduct.Name;
                 tbxBarCode.Text = GlobalProduct.BarCode;
                 tbxSize.Text = GlobalProduct.Size;
+                tbxColor.Text = GlobalProduct.Color;
                 cbxBrand.SelectedValue = GlobalProduct.BrandId;
                 cbxCategory.SelectedValue = GlobalProduct.CategoryId;
                 nmUDStock.Value = GlobalProduct.Stock;
