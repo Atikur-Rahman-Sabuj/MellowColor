@@ -110,6 +110,10 @@ namespace MellowColorUI
             {
                 HideComponents();
             }
+            if(user.Type == "SuperAdmin")
+            {
+                btnManageUser.Show();
+            }
         }
         private void HideComponents()
         {
@@ -239,5 +243,9 @@ namespace MellowColorUI
             Utilities.RedirectiontoForm(this, new RegisterUser(user));
         }
 
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new ManageUser(user));
+        }
     }
 }

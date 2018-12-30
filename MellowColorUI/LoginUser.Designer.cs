@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUser));
             this.lblError = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Navy;
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnLogin.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
@@ -141,6 +143,7 @@
             // btnResetLogin
             // 
             this.btnResetLogin.BackColor = System.Drawing.Color.Navy;
+            this.btnResetLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnResetLogin.BackgroundImage")));
             this.btnResetLogin.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnResetLogin.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
             this.btnResetLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;

@@ -67,7 +67,7 @@ namespace MellowColorUI
             #region SetUserType
             if (user.Type == "Developer")
             {
-                user.Type = "SuperAdmin";
+                newUser.Type = "SuperAdmin";
             }
             else if (user.Type == "SuperAdmin")
             {
@@ -90,7 +90,7 @@ namespace MellowColorUI
             if (Validator.TryValidateObject(newUser, validationContext, results, true))
             {
                 UserDataAccess userDataAccess = new UserDataAccess();
-                if(userDataAccess.Register(newUser))
+                if(userDataAccess.Register(newUser, user.Id))
                 {
                     ResetFormControls();
                     lblMessage.Text = "Registered Successfully, Please login!";

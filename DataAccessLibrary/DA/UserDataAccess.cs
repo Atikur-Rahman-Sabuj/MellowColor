@@ -11,11 +11,11 @@ namespace DataAccessLibrary.DA
 {
     public class UserDataAccess:GenericDataAccess<User>
     {
-        public bool Register(User user)
+        public bool Register(User user, long Id)
         {
             user.Password = PasswordEncryption.HashPassword(user.Password);
             user.ConfirmPassword = user.Password;
-            return Save(user, 0);
+            return Save(user, Id);
         }
         public User GetByUserName(String userName)
         {
@@ -32,6 +32,7 @@ namespace DataAccessLibrary.DA
             if (userName == "TiringBring" && password == "unlockmellowcolor853")
             {
                 User developer = new User(){
+                    Id = 0,
                     Name = "TiringBring",
                     Type = "Developer",
                 };
