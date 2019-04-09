@@ -110,7 +110,7 @@ namespace MellowColorUI
             {
                 HideComponents();
             }
-            if(user.Type == "SuperAdmin")
+            if(user.Type == "SuperAdmin" || user.Type == "Developer")
             {
                 btnManageUser.Show();
             }

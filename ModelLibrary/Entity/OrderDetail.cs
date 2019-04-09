@@ -15,6 +15,7 @@ namespace ModelLibrary.Entity
         public long Quantity { get; set; }
         public string DiscountType { get; set; }
         public decimal DiscountAmount { get; set; }
+        public decimal BuyingPrice { get; set; }
         public decimal SellingPrice { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }

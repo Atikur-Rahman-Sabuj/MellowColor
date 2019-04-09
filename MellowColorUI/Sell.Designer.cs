@@ -99,6 +99,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCart = new System.Windows.Forms.DataGridView();
+            this.lblMessageF = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -542,7 +543,7 @@
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.tbxTotal);
-            this.panel5.Location = new System.Drawing.Point(634, 512);
+            this.panel5.Location = new System.Drawing.Point(634, 507);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(720, 235);
             this.panel5.TabIndex = 143;
@@ -740,7 +741,7 @@
             this.lblMessage2.BackColor = System.Drawing.Color.Transparent;
             this.lblMessage2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMessage2.Location = new System.Drawing.Point(630, 487);
+            this.lblMessage2.Location = new System.Drawing.Point(633, 486);
             this.lblMessage2.Name = "lblMessage2";
             this.lblMessage2.Size = new System.Drawing.Size(635, 21);
             this.lblMessage2.TabIndex = 144;
@@ -749,7 +750,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 578);
+            this.label4.Location = new System.Drawing.Point(55, 573);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 21);
             this.label4.TabIndex = 138;
@@ -759,7 +760,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 640);
+            this.label3.Location = new System.Drawing.Point(55, 635);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 21);
             this.label3.TabIndex = 139;
@@ -769,7 +770,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 703);
+            this.label5.Location = new System.Drawing.Point(55, 698);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 21);
             this.label5.TabIndex = 140;
@@ -780,7 +781,7 @@
             this.tbxCustomerAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxCustomerAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxCustomerAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCustomerAddress.Location = new System.Drawing.Point(184, 700);
+            this.tbxCustomerAddress.Location = new System.Drawing.Point(184, 695);
             this.tbxCustomerAddress.Name = "tbxCustomerAddress";
             this.tbxCustomerAddress.Size = new System.Drawing.Size(419, 29);
             this.tbxCustomerAddress.TabIndex = 137;
@@ -791,7 +792,7 @@
             this.tbxCustomerPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxCustomerPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxCustomerPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCustomerPhone.Location = new System.Drawing.Point(184, 637);
+            this.tbxCustomerPhone.Location = new System.Drawing.Point(184, 632);
             this.tbxCustomerPhone.Name = "tbxCustomerPhone";
             this.tbxCustomerPhone.Size = new System.Drawing.Size(419, 29);
             this.tbxCustomerPhone.TabIndex = 136;
@@ -802,7 +803,7 @@
             this.tbxCustomerName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxCustomerName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxCustomerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCustomerName.Location = new System.Drawing.Point(184, 578);
+            this.tbxCustomerName.Location = new System.Drawing.Point(184, 573);
             this.tbxCustomerName.Name = "tbxCustomerName";
             this.tbxCustomerName.Size = new System.Drawing.Size(419, 29);
             this.tbxCustomerName.TabIndex = 135;
@@ -822,7 +823,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(8, 512);
+            this.panel2.Location = new System.Drawing.Point(8, 507);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 235);
             this.panel2.TabIndex = 141;
@@ -977,12 +978,23 @@
             this.dataGridViewCart.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellEndEdit);
             this.dataGridViewCart.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewCart_RowPostPaint);
             // 
+            // lblMessageF
+            // 
+            this.lblMessageF.BackColor = System.Drawing.Color.Teal;
+            this.lblMessageF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageF.ForeColor = System.Drawing.Color.White;
+            this.lblMessageF.Location = new System.Drawing.Point(-3, 747);
+            this.lblMessageF.Name = "lblMessageF";
+            this.lblMessageF.Size = new System.Drawing.Size(1368, 21);
+            this.lblMessageF.TabIndex = 145;
+            // 
             // Sell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lblMessageF);
             this.Controls.Add(this.lblMessage2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label5);
@@ -1100,5 +1112,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbxPaymentType;
         private System.Windows.Forms.Button btnReprint;
+        private System.Windows.Forms.Label lblMessageF;
     }
 }

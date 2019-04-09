@@ -18,6 +18,7 @@ namespace ModelLibrary.Entity
         public string DiscountType { get; set; }
         public decimal DiscountAmount { get; set; }
         public long TotalItem { get; set; }
+        public decimal TotalBuyingPrice { get; set; }
         public decimal TotalPrice { get; set; }
         [NotMapped]
         public string PaymentType { get; set; }

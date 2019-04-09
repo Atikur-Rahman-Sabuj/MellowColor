@@ -62,7 +62,7 @@ namespace MellowColorUI
             BytesValue = PrintExtensions.AddBytes(BytesValue, obj.CharSize.Nomarl());
             BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n","Size",Size));
             BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n", "Color", Color));
-            BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n", "Price", Price.ToString("N", new CultureInfo("en-US"))));
+            BytesValue = PrintExtensions.AddBytes(BytesValue, String.Format("{0,22} : {1,-22}\n", "Price", Price.ToString("N", new CultureInfo("en-US"))+ "BDT"));
             BytesValue = PrintExtensions.AddBytes(BytesValue, Barcode + "\n");
             BytesValue = PrintExtensions.AddBytes(BytesValue, obj.BarCode.Code128(Barcode));
             BytesValue = PrintExtensions.AddBytes(BytesValue, "\n\n\n\n\n");
@@ -85,7 +85,10 @@ namespace MellowColorUI
 
         private bool BarcodeNotGood()
         {
-            if (Regex.IsMatch(tbxBarcode.Text, @"^\d+$"))
+            if (tbxBarcode.Text == "")
+                return false;
+
+            if ( Regex.IsMatch(tbxBarcode.Text, @"^\d+$"))
             {
                 return false;
             }

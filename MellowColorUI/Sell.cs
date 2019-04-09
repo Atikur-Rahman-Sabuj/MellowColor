@@ -292,6 +292,11 @@ namespace MellowColorUI
                 SaveOrder();
                 ResetControls();
             }
+            else
+            {
+                lblMessageF.Text = "No item on cart or Paid amount is smaller than total sell.";
+            }
+            
         }
 
         private void SaveOrder()
@@ -306,6 +311,7 @@ namespace MellowColorUI
                 DiscountType = GetDiscountType(cbxDiscountType.Text),
                 DiscountAmount = nudDiscount.Value,
                 TotalItem = CartProducts.Count,
+                TotalBuyingPrice = CartProducts.Select(a => a.BuyingPrice * a.Total).ToList().Sum(),
                 TotalPrice = Convert.ToDecimal(tbxNetTotal.Text)
             };
             List<OrderDetail> orderDetails = CartProducts.Select(a => new OrderDetail()
@@ -316,7 +322,8 @@ namespace MellowColorUI
                 Quantity = a.Total,
                 DiscountType = a.DiscountType,
                 DiscountAmount = a.DiscountAmount,
-                SellingPrice = a.TotalPrice,
+                SellingPrice = a.SellingPrice,
+                BuyingPrice = a.BuyingPrice,
             }).ToList();
             order.OrderDetails = orderDetails;
             CartProducts.ForEach(a => a.Stock -= a.Total);
@@ -332,16 +339,17 @@ namespace MellowColorUI
             OrderDataAccess orderDataAccess = new OrderDataAccess();
             orderDataAccess._mellowColorContext = productDataAccess._mellowColorContext;
             orderDataAccess._mellowColorDbSet = orderDataAccess._mellowColorContext.Set<Order>();
-            if (new GenericDataAccess<Order>().Save(order, user.Id))
+            if (orderDataAccess.Save(order, user.Id))
             {
-                lblMessage.Text = "Order Saved Sussessfully!";
+                lblMessageF.Text = "Order Saved Sussessfully!";
+                GlobalOrder = order;
+                GlobalOrderDetails = orderDetails;
+                PaymentType = GetSelectedText(cbxPaymentType.SelectedIndex);
+                PaidAmount = nudPaidAmount.Value;
+                //  PrintOrder();disabled to save paper
             }
             //productDataAccess._mellowColorContext = new MellowColorContext();
-            GlobalOrder = order;
-            GlobalOrderDetails = orderDetails;
-            PaymentType = GetSelectedText(cbxPaymentType.SelectedIndex);
-            PaidAmount = nudPaidAmount.Value;
-            PrintOrder();
+
         }
 
         private void PrintOrder()

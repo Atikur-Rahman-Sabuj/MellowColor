@@ -28,7 +28,7 @@ namespace MellowColorUI
             Utilities.TimerUpdate(lblTime);
             dataGridViewUsers.AutoGenerateColumns = false;
             userDataAccess = new UserDataAccess();
-            GlobalUsers = userDataAccess.GetAll().Where(a => a.Type == "Admin" || a.Type == "Seller").ToList();
+            GlobalUsers = userDataAccess.GetAll().Where(a =>a.Type == "SuperAdmin" || a.Type == "Admin" || a.Type == "Seller").ToList();
             Utilities.BindListToGridView<User>(GlobalUsers, dataGridViewUsers, lblMessage);
             
         }
@@ -100,6 +100,36 @@ namespace MellowColorUI
             {
                 lblMessage.Text = "Couldnot save password, please try again!";
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Home(this.user));
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Sell(this.user));
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Product(this.user));
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Category(this.user));
+        }
+
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Brand(this.user));
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Utilities.RedirectiontoForm(this, new Return(this.user));
         }
     }
 }

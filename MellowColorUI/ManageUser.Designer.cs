@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUser));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnBrand = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -50,6 +50,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnChangePassword = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblMessage = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -62,10 +66,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnResetRegister = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChangePassword = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -93,6 +93,7 @@
             this.btnReports.TabIndex = 149;
             this.btnReports.Text = "RETURN";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnBrand
             // 
@@ -113,6 +114,7 @@
             this.btnBrand.TabIndex = 148;
             this.btnBrand.Text = "BRAND";
             this.btnBrand.UseVisualStyleBackColor = false;
+            this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
             // 
             // btnCategory
             // 
@@ -133,6 +135,7 @@
             this.btnCategory.TabIndex = 147;
             this.btnCategory.Text = "CATEGORY";
             this.btnCategory.UseVisualStyleBackColor = false;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnProduct
             // 
@@ -153,6 +156,7 @@
             this.btnProduct.TabIndex = 146;
             this.btnProduct.Text = "PRODUCT";
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnSell
             // 
@@ -173,6 +177,7 @@
             this.btnSell.TabIndex = 145;
             this.btnSell.Text = "SELL";
             this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             // 
             // btnHome
             // 
@@ -193,6 +198,7 @@
             this.btnHome.TabIndex = 144;
             this.btnHome.Text = "HOME";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel1
             // 
@@ -349,28 +355,28 @@
             this.dataGridViewUsers.AllowUserToResizeRows = false;
             this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Column1,
             this.barCode,
             this.btnChangePassword});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewUsers.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewUsers.Location = new System.Drawing.Point(67, 199);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
@@ -381,6 +387,51 @@
             this.dataGridViewUsers.TabIndex = 151;
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
             this.dataGridViewUsers.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewSearchResult_RowPostPaint);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SerialNo";
+            this.Column2.FillWeight = 50F;
+            this.Column2.HeaderText = "No.";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 40;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 300;
+            // 
+            // barCode
+            // 
+            this.barCode.DataPropertyName = "Type";
+            this.barCode.HeaderText = "Type";
+            this.barCode.Name = "barCode";
+            this.barCode.ReadOnly = true;
+            this.barCode.Width = 150;
+            // 
+            // btnChangePassword
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnChangePassword.DefaultCellStyle = dataGridViewCellStyle2;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.HeaderText = "Change Password";
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.ReadOnly = true;
+            this.btnChangePassword.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnChangePassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseColumnTextForButtonValue = true;
+            this.btnChangePassword.Width = 180;
             // 
             // lblMessage
             // 
@@ -524,51 +575,6 @@
             this.panel2.Size = new System.Drawing.Size(519, 259);
             this.panel2.TabIndex = 185;
             // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SerialNo";
-            this.Column2.FillWeight = 50F;
-            this.Column2.HeaderText = "No.";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Width = 40;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Name";
-            this.Column1.HeaderText = "Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 300;
-            // 
-            // barCode
-            // 
-            this.barCode.DataPropertyName = "Type";
-            this.barCode.HeaderText = "Type";
-            this.barCode.Name = "barCode";
-            this.barCode.ReadOnly = true;
-            this.barCode.Width = 150;
-            // 
-            // btnChangePassword
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnChangePassword.DefaultCellStyle = dataGridViewCellStyle11;
-            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.HeaderText = "Change Password";
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.ReadOnly = true;
-            this.btnChangePassword.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnChangePassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseColumnTextForButtonValue = true;
-            this.btnChangePassword.Width = 180;
-            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,7 +610,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageUser";
             this.Text = "ManageUser";
             this.panel4.ResumeLayout(false);

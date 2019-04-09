@@ -121,7 +121,7 @@ namespace MellowColorUI
                 Orders = Orders.Where(a => a.CreatedBy == SelectedUser).ToList();
             }
             Utilities.BindListToGridView<Order>(Orders, dataGridViewSells, lblMessage);
-            TotalBuyingPrice = Orders.Sum(a => a.OrderDetails.Sum(b => b.Product.BuyingPrice));
+            TotalBuyingPrice = Orders.Sum(a => a.TotalBuyingPrice);
             TotalSellingPrice = Orders.Sum(a => a.TotalPrice);
             tbxTotalSells.Text = Orders.Count.ToString();
             tbxTotalBuyingPrice.Text = TotalBuyingPrice.ToString();

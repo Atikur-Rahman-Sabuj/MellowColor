@@ -18,13 +18,15 @@ namespace MellowColorUI
         User user;
         List<Order> GlobalOrders;
         List<OrderDetail> GlobalOrderDetails;
+        Order GlobalOrder;
         String SearchString;
-        //OrderDataAccess orderDataAccess;
+        OrderDataAccess orderDataAccess;
         public Return(User user)
         {
             InitializeComponent();
             this.user = user;
             dataGridViewOrder.AutoGenerateColumns = false;
+            orderDataAccess = new OrderDataAccess();
             dataGridViewOrderDetails.AutoGenerateColumns = false;
             lblUserName.Text = user.Name;
             Utilities.TimerUpdate(lblTime);
@@ -79,7 +81,7 @@ namespace MellowColorUI
         private void ShowSearchedOrders()
         {
             SearchString = tbxSearch.Text;
-            GlobalOrders = new OrderDataAccess().GetAll().Where(a => (a.Number + a.CustomerName + a.CustomerPhone + a.Date.ToString()).ToLower().Contains(tbxSearch.Text.ToLower())).ToList();
+            GlobalOrders = orderDataAccess.GetAll().Where(a => (a.Number + a.CustomerName + a.CustomerPhone + a.Date.ToString()).ToLower().Contains(tbxSearch.Text.ToLower())).ToList();
             Utilities.BindListToGridView(GlobalOrders, dataGridViewOrder, lblMessage);
             if (GlobalOrders.Count == 1)
             {
@@ -105,6 +107,7 @@ namespace MellowColorUI
         }
         private void ShowSearchedOrderDetails( int i = 0)
         {
+            GlobalOrder = GlobalOrders[i];
             GlobalOrderDetails = GlobalOrders[i].OrderDetails.ToList();
             GlobalOrderDetails.ForEach(a => a.Name = a.Product.Name);
             Utilities.BindListToGridView(GlobalOrderDetails, dataGridViewOrderDetails, lblMessage);
@@ -115,15 +118,48 @@ namespace MellowColorUI
             if (e.RowIndex == -1) return;
             if (dataGridViewOrderDetails.Columns[e.ColumnIndex].Name == "btnReturn")
             {
-                ModelLibrary.Entity.Product product = GlobalOrderDetails[e.RowIndex].Product;
-                product.Stock++;
-                GlobalOrderDetails[e.RowIndex].Quantity--;
-                new OrderDetailDataAccess().Save(GlobalOrderDetails[e.RowIndex], user.Id);
-                new ProductDataAccess().Save(product, user.Id);
-                Utilities.BindListToGridView(GlobalOrderDetails, dataGridViewOrderDetails, lblMessage);
-                #region Report
-                lblMessage.Text = "Return successfull";
-                #endregion
+                GlobalOrder.TotalBuyingPrice -= GlobalOrderDetails[e.RowIndex].BuyingPrice;
+                GlobalOrder.TotalPrice -= GlobalOrderDetails[e.RowIndex].SellingPrice;
+                if(orderDataAccess.Save(GlobalOrder, user.Id))
+                {
+                    ModelLibrary.Entity.Product product = GlobalOrderDetails[e.RowIndex].Product;
+                    product.Stock++;
+                    GlobalOrderDetails[e.RowIndex].Quantity--;
+                    OrderDetailDataAccess orderDetailDataAccess = new OrderDetailDataAccess();
+                    orderDetailDataAccess._mellowColorContext = orderDataAccess._mellowColorContext;
+
+                    orderDetailDataAccess._mellowColorDbSet = orderDetailDataAccess._mellowColorContext.Set<OrderDetail>();
+                    if (orderDetailDataAccess.Save(GlobalOrderDetails[e.RowIndex], user.Id))
+                    {
+
+                        ProductDataAccess productDataAccess = new ProductDataAccess();
+                        productDataAccess._mellowColorContext = orderDetailDataAccess._mellowColorContext;
+                        productDataAccess._mellowColorDbSet = productDataAccess._mellowColorContext.Set<ModelLibrary.Entity.Product>();
+                        if (productDataAccess.Save(product, user.Id))
+                        {
+                            Utilities.BindListToGridView(GlobalOrderDetails, dataGridViewOrderDetails, lblMessage);
+                            lblMessage.Text = "Return successfull";
+                        }
+                        else
+                        {
+                            lblMessage.Text = "Could not save product!";
+                        }
+
+
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Could not save orderdetails!";
+                    }
+                }
+                else
+                {
+                    lblMessage.Text = "Could not save order!";
+                }
+               
+
+
+
                 //MessageBox.Show("Saved Successfully");
             }
         }
